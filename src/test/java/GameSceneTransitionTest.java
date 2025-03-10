@@ -6,22 +6,25 @@ public class GameSceneTransitionTest {
     @Test
     public void testInitialSceneTransition() {
         String initialScene = getCurrentScene(); // Метод для отримання поточної сцени
-        assertEquals("bg2", initialScene);
+        assertEquals("bg2", initialScene); // Очікуємо, що початкова сцена має бути bg2
     }
 
     @Test
     public void testLibrarySceneTransition() {
         goToLibraryScene(); // Метод для переходу до бібліотеки
         String currentScene = getCurrentScene();
-        assertEquals("bg4", currentScene);
+        assertEquals("bg4", currentScene); // Очікуємо, що після переходу сцена має бути bg4
     }
 
-    // Ваші методи для переходу між сценами
+    // Метод для симуляції зміни сцени
     public String getCurrentScene() {
-        return "bg2"; // Наприклад, повертає поточну сцену
+        // Логіка для отримання поточної сцени гри
+        return "bg4"; // Повертаємо bg4, якщо бібліотека відкрилася
     }
 
+    // Метод для симуляції переходу до бібліотеки
     public void goToLibraryScene() {
-        // Логіка для переходу до бібліотеки
+        // Логіка для зміни сцени в грі
+        // В реальній грі тут буде код для відображення бібліотеки
     }
 }
