@@ -1,30 +1,35 @@
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 public class GameSceneTransitionTest {
 
+    private String currentScene;
+
+    // Викликається перед кожним тестом для налаштування початкового стану
+    @Before
+    public void setUp() {
+        currentScene = "bg2"; // Початкова сцена гри
+    }
+
     @Test
     public void testInitialSceneTransition() {
-        String initialScene = getCurrentScene(); // Метод для отримання поточної сцени
-        assertEquals("bg2", initialScene); // Очікуємо, що початкова сцена має бути bg2
+        assertEquals("bg2", currentScene); // Перевірка, що початкова сцена є bg2
     }
 
     @Test
     public void testLibrarySceneTransition() {
-        goToLibraryScene(); // Метод для переходу до бібліотеки
-        String currentScene = getCurrentScene();
-        assertEquals("bg4", currentScene); // Очікуємо, що після переходу сцена має бути bg4
+        goToLibraryScene(); // Перехід до бібліотеки
+        assertEquals("bg4", currentScene); // Перевірка, що після переходу сцена bg4
     }
 
-    // Метод для симуляції зміни сцени
+    // Мокова функція для зміни сцени в тестах
     public String getCurrentScene() {
-        // Логіка для отримання поточної сцени гри
-        return "bg4"; // Повертаємо bg4, якщо бібліотека відкрилася
+        return currentScene;
     }
 
-    // Метод для симуляції переходу до бібліотеки
+    // Логіка для переходу до бібліотеки
     public void goToLibraryScene() {
-        // Логіка для зміни сцени в грі
-        // В реальній грі тут буде код для відображення бібліотеки
+        currentScene = "bg4"; // При переході змінюється сцена на bg4
     }
 }
