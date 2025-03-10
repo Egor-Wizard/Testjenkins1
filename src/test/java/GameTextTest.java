@@ -5,17 +5,17 @@ public class GameTextTest {
 
     @Test
     public void testHeroMonologue() {
-        String heroText = getHeroMonologue(); // Метод, що повертає текст монолога героя
+        String heroText = getHeroMonologue();
         assertEquals("Запізно… Зазвичай у цей час у кампусі вже тихо.", heroText);
     }
 
     @Test
     public void testCatSpeech() {
-        String catText = getCatSpeech(); // Метод, що повертає текст кота
+        String catText = getCatSpeech();
         assertEquals("Чого вилупився? Котів не бачив?", catText);
     }
 
-    // Ваші методи для отримання текстів, які будуть використовуватися в тестах
+    
     public String getHeroMonologue() {
         return "Запізно… Зазвичай у цей час у кампусі вже тихо.";
     }
